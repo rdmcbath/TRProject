@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">TinRoofProject</string>
+    <string name="no_network">No Network</string>
+
+    <!-- Main Activity -->
+    <string name="main_toolbar_title">Incomplete ToDo List: All Users</string>
+    <string name="todo_s">ToDo\'s</string>
+    <string name="user_id">User Id</string>
+
+    <!-- Detail Activity -->
+    <string name="detail_toolbar_title">ToDo List for User </string>
+    <string name="detail_title">ToDo</string>
+    <string name="status">Status</string>
+    <string name="detail_adapter_done">Done</string>
+    <string name="detail_adapter_incomplete">Incomplete</string>
+
+</resources>
