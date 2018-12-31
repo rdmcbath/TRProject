@@ -1,9 +1,9 @@
 # TRProject
-Uses jsonplaceholder API todos response to demonstrate mapping and sorting
+Uses jsonplaceholder API todos response to demonstrate mapping and sorting, listview, simple adapter, recyclerview, custom adapter, retrofit api consumption.
 
 Using the following API: http://jsonplaceholder.typicode.com/todos 
 
-Write a small native mobile app that will display: 
+native mobile app that displays the following: 
 
 1. An initial screen that consists of a table with one row for each unique "userId" 
 2. In each row there should be a count for the number of incomplete todos (determined by "completed": false) 
