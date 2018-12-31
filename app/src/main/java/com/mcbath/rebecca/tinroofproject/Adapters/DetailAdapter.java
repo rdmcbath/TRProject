@@ -22,8 +22,9 @@ import java.util.List;
  * on 12/6/18.
  */
 public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder> {
-	private static final String TAG = DetailAdapter.class.getSimpleName();
+	private static final String TAG = com.mcbath.rebecca.tinroofproject.Adapters.MainAdapter.class.getSimpleName();
 
+		private ToDoResponse toDoResponse;
 		private List<ToDoResponse> toDoList;
 
 		public DetailAdapter(List<ToDoResponse> toDoList) {
@@ -51,7 +52,9 @@ public class DetailAdapter extends RecyclerView.Adapter<DetailAdapter.ViewHolder
 
 		@Override
 		public int getItemCount() {
+			Log.d(TAG, "getItemCount = " + toDoList.size());
 			return toDoList.size();
+
 		}
 
 	class ViewHolder extends RecyclerView.ViewHolder {

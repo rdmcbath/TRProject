@@ -38,7 +38,7 @@ public class DetailActivity extends AppCompatActivity {
 	public static List<ToDoResponse> toDoResponseList = new ArrayList<>();
 	private Parcelable mListState;
 	private String STATE_KEY = "list_state";
-	private int userId;
+	private long userId;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class DetailActivity extends AppCompatActivity {
 		if (intent != null) {
 			try {
 				String mUserId = intent.getStringExtra("userId");
-				userId = Integer.valueOf(mUserId);
+				userId = Long.valueOf(mUserId);
 			} catch (NumberFormatException e){
 				Log.d(TAG, "NumberFormatException" + e.getMessage());
 				userId = 1; //use default UserId in case of null
