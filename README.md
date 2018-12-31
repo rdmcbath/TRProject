@@ -1,5 +1,5 @@
 # TRProject
-Uses jsonplaceholder API to demonstrate mapping with Guava, sorting, listview, simple adapter, recyclerview, custom adapter, api consumption with retrofit2.
+Uses jsonplaceholder API to demonstrate mapping with Guava, sorting, listview, simple adapter, recyclerview, custom adapter, api consumption with Retrofit2.
 
 Using the following API: http://jsonplaceholder.typicode.com/todos 
 
