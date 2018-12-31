@@ -38,6 +38,7 @@ public class DetailActivity extends AppCompatActivity {
 	public static List<ToDoResponse> toDoResponseList = new ArrayList<>();
 	private Parcelable mListState;
 	private String STATE_KEY = "list_state";
+	private int userId;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +46,17 @@ public class DetailActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_detail);
 
 		Intent intent = getIntent();
-		int mUserId = intent.getIntExtra("userId", 0);
+		if (intent != null) {
+			try {
+				String mUserId = intent.getStringExtra("userId");
+				userId = Integer.valueOf(mUserId);
+			} catch (NumberFormatException e){
+				Log.d(TAG, "NumberFormatException" + e.getMessage());
+				userId = 1; //use default UserId in case of null
+			}
+		}
 
-		Objects.requireNonNull(getSupportActionBar()).setTitle("ToDo List for UserId " + mUserId);
+		Objects.requireNonNull(getSupportActionBar()).setTitle("ToDo List for UserId " + userId);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		mRecyclerView = findViewById(R.id.detail_recyclerView);
@@ -80,9 +89,7 @@ public class DetailActivity extends AppCompatActivity {
 
 	private void loadToDoList() {
 		ToDoInterface toDoInterface = ToDoClient.getClient().create(ToDoInterface.class);
-		Intent intent = getIntent();
-		int mUserId = intent.getIntExtra("userId", 0);
-		Call<List<ToDoResponse>> call = toDoInterface.getTodosByUserId(mUserId);
+		Call<List<ToDoResponse>> call = toDoInterface.getTodosByUserId(userId);
 		Log.d(TAG, "ToDoInterface - GetResponse Called");
 
 		call.enqueue(new Callback<List<ToDoResponse>>() {
@@ -90,7 +97,6 @@ public class DetailActivity extends AppCompatActivity {
 			public void onResponse(Call<List<ToDoResponse>> call, Response<List<ToDoResponse>> response) {
 				if (response.isSuccessful()) {
 					List<ToDoResponse> toDoList = response.body();
-					Log.d(TAG, "ResponseBodyRetrofit Called");
 
 					mAdapter = new DetailAdapter(toDoList);
 					mRecyclerView.setAdapter(mAdapter);
