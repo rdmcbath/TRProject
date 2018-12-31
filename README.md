@@ -3,7 +3,7 @@ Uses jsonplaceholder API to demonstrate mapping with Guava, sorting, listview, s
 
 Using the following API: http://jsonplaceholder.typicode.com/todos 
 
-native mobile app that displays the following: 
+This small native mobile app displays the following: 
 
 1. An initial screen that consists of a table with one row for each unique "userId" 
 2. In each row there should be a count for the number of incomplete todos (determined by "completed": false) 
