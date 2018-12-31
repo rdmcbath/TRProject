@@ -129,11 +129,10 @@ public class MainActivity extends AppCompatActivity {
 						viewMap.put("todoCount", todoCount);
 						arrayList.add(viewMap); //add the hashmap into arrayList
 
-						// sort the hashmap by to-dos in descending order
+						// sort by to-dos in descending order
 						Comparator<HashMap<String, String>> todosComparator = new Comparator<HashMap<String,String>>() {
 							@Override
 							public int compare(HashMap<String, String> o1, HashMap<String, String> o2) {
-								// Get the distance and compare the distance.
 								Integer todos1 = Integer.parseInt(o1.get("todoCount"));
 								Integer todos2 = Integer.parseInt(o2.get("todoCount"));
 
