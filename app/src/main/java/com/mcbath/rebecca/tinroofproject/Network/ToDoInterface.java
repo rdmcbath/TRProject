@@ -22,6 +22,10 @@ public interface ToDoInterface {
 
 	@GET("todos")
 	Call<List<ToDoResponse>> getTodosByUserId(
-			@Query("userId") Long userId
+			@Query("userId") Integer userId
 	);
+
+	@GET("todos?&_sort=userId&completed=false")
+	Call<Map<Integer, Integer>> getTotalToDosByUserId();
+
 }

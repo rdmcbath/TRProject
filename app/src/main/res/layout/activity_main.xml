@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".UI.MainActivity">
 
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".UI.MainActivity"
         android:id="@+id/main_activity_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
@@ -46,13 +43,15 @@
                 android:text="@string/todo_s"/>
         </LinearLayout>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/main_recyclerView"
+        <ListView
+            android:id="@+id/main_listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:divider="#000"
+            android:dividerHeight="1px"
+            android:listSelector="#DCDCDC"
             android:fadeScrollbars="true"
             android:paddingBottom="8dp"
             android:scrollbars="vertical"/>
 
     </LinearLayout>
-</ScrollView>

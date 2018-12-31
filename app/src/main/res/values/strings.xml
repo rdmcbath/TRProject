@@ -5,7 +5,7 @@
 
     <!-- Main Activity -->
     <string name="main_toolbar_title">Incomplete ToDo List: All Users</string>
-    <string name="todo_s">ToDo\'s</string>
+    <string name="todo_s">Incomplete ToDo\'s</string>
     <string name="user_id">User Id</string>
 
     <!-- Detail Activity -->

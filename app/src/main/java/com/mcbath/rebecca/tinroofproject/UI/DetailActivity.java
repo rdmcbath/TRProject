@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_detail);
 
 		Intent intent = getIntent();
-		long mUserId = intent.getIntExtra("userId", 0);
+		int mUserId = intent.getIntExtra("userId", 0);
 
 		Objects.requireNonNull(getSupportActionBar()).setTitle("ToDo List for UserId " + mUserId);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -81,7 +81,7 @@ public class DetailActivity extends AppCompatActivity {
 	private void loadToDoList() {
 		ToDoInterface toDoInterface = ToDoClient.getClient().create(ToDoInterface.class);
 		Intent intent = getIntent();
-		long mUserId = intent.getIntExtra("userId", 0);
+		int mUserId = intent.getIntExtra("userId", 0);
 		Call<List<ToDoResponse>> call = toDoInterface.getTodosByUserId(mUserId);
 		Log.d(TAG, "ToDoInterface - GetResponse Called");
 
