@@ -1,5 +1,5 @@
 # TRProject
-Uses jsonplaceholder API todos response to demonstrate mapping and sorting, listview, simple adapter, recyclerview, custom adapter, retrofit api consumption.
+Uses jsonplaceholder API todos response to demonstrate mapping and sorting, listview, simple adapter, recyclerview, custom adapter, retrofit2 api consumption.
 
 Using the following API: http://jsonplaceholder.typicode.com/todos 
 
